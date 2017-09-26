@@ -150,6 +150,7 @@ public:
     void channel(const CHANNEL channel)
     {
         append(CMD::Cmd<CMD::TYPE::SETTING>::W_CHANNEL, 5);
+        if (channel < 10) append("0", 1);
         append((uint8_t)channel, 10);
         write();
     }
@@ -162,7 +163,7 @@ public:
     void power(const RF_POWER power)
     {
         append(CMD::Cmd<CMD::TYPE::SETTING>::W_RF_POWER, 5);
-        append((uint8_t)power);
+        append((uint8_t)power, 10);
         write();
     }
 
