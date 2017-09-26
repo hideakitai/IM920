@@ -47,7 +47,7 @@ enum RF_RATE
     RATE_LONG = 2 // default
 };
 
-}
+} // namespace IM920
 
 
 #endif /* IM920_SETTINGS_H */

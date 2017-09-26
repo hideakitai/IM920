@@ -75,7 +75,7 @@ struct Cmd<SEND>
     static constexpr const char* MULTI_BYTES = "TXDA ";
 };
 
-}
-}
+} // namespace CMD
+} // namespace IM920
 
-#endif
+#endif /* IM920_CMD_LIST_H */

@@ -26,7 +26,9 @@ class Receiver
 
 public:
 
-    inline Receiver() {};
+    inline Receiver()
+    : stream(), asc_buffer(), bin_buffer(), read_count(), is_available(false)
+    {};
     inline ~Receiver() {};
 
     bool setup(S& s)
@@ -221,6 +223,6 @@ protected:
 #endif
 
 
-} // namespace
+} // namespace IM920
 
 #endif /* RECEIVER_H */
