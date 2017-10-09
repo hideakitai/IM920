@@ -225,6 +225,13 @@ public:
         return *this;
     }
 
+    Sender<S>& operator<< (const char* arg)
+    {
+        if (empty()) append(CMD::Cmd<CMD::TYPE::SEND>::MULTI_BYTES, 5);
+        append(arg, sizeof(arg));
+        return *this;
+    }
+
 protected:
 
 #if defined (TEENSYDUINO) || defined(__AVR__)
