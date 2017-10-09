@@ -1,7 +1,7 @@
 #ifndef IM920_CMD_LIST_H
 #define IM920_CMD_LIST_H
 
-namespace IM920 {
+namespace IM920Ctrl {
 namespace CMD {
 
 enum TYPE
@@ -76,6 +76,6 @@ struct Cmd<SEND>
 };
 
 } // namespace CMD
-} // namespace IM920
+} // namespace IM920Ctrl
 
 #endif /* IM920_CMD_LIST_H */

@@ -1,7 +1,7 @@
 #ifndef IM920_SETTINGS_H
 #define IM920_SETTINGS_H
 
-namespace IM920 {
+namespace IM920Ctrl {
 
 enum BAUDRATE
 {
@@ -47,7 +47,7 @@ enum RF_RATE
     RATE_LONG = 2 // default
 };
 
-} // namespace IM920
+} // namespace IM920Ctrl
 
 
 #endif /* IM920_SETTINGS_H */

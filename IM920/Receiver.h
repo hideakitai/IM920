@@ -11,7 +11,7 @@
 #include <cstdint>
 #include <algorithm>
 
-namespace IM920 {
+namespace IM920Ctrl {
 
 template <typename S>
 class Receiver
@@ -181,9 +181,9 @@ protected:
         Serial.print(remoteNode(), HEX); Serial.print(",");
         Serial.print(remoteUID(),  HEX); Serial.print(",");
         Serial.print(remoteRSSI(), HEX); Serial.print(":");
-        for (size_t i = 1; i < size(); ++i)
+        for (uint8_t i = 0; i < size() - 1; ++i)
         {
-            Serial.print(data(i - 1), HEX);
+            Serial.print(data(i), HEX);
             Serial.print(",");
         }
         Serial.println(data(size() - 1), HEX);
@@ -223,6 +223,6 @@ protected:
 #endif
 
 
-} // namespace IM920
+} // namespace IM920Ctrl
 
 #endif /* RECEIVER_H */

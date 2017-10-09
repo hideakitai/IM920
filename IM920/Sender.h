@@ -13,7 +13,7 @@
 #include "IM920Commands.h"
 #include "IM920Settings.h"
 
-namespace IM920 {
+namespace IM920Ctrl {
 
 template <typename S>
 class Sender
@@ -324,6 +324,6 @@ void Sender<ofSerial>::append(const T& n, uint8_t base)
 
 #endif
 
-} // namespace IM920
+} // namespace IM920Ctrl
 
 #endif /* IM920_SENDER_H */
