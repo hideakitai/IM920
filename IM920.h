@@ -4,7 +4,7 @@
 #if defined (TEENSYDUINO) || defined(__AVR__)
 #include "Arduino.h"
 using SerialStream = Stream;
-#elif defined OF_VERSION_MAIJOR
+#elif defined OF_VERSION_MAJOR
 #include "ofMain.h"
 using SerialStream = ofSerial;
 #endif
