@@ -110,7 +110,7 @@ IM920Param::RF_RATE::RATE_LONG // default
 
 ## Supported Platform
 
-- NON-AVR Arduino Platforms
+- Arduino Platforms
 - openFrameworks (tested on 0.9.8)
 
 
