@@ -1,7 +1,11 @@
 #ifndef IM920_SENDER_H
 #define IM920_SENDER_H
 
-#if defined (TEENSYDUINO) || defined(__AVR__)
+#if defined (TEENSYDUINO)
+#include "Arduino.h"
+#include <cstdint>
+#include <type_traits>
+#elif defined(__AVR__)
 #include "Arduino.h"
 #elif defined OF_VERSION_MAJOR
 #include "ofMain.h"
@@ -9,7 +13,6 @@
 #else
 #error THIS PLATFORM IS NOT SUPPORTED
 #endif
-#include <cstdint>
 #include "IM920Commands.h"
 #include "IM920Settings.h"
 
@@ -234,11 +237,28 @@ public:
 
 protected:
 
-#if defined (TEENSYDUINO) || defined(__AVR__)
+#if defined (TEENSYDUINO)
 
     using StringType = String;
 
     template <typename T, typename std::enable_if<std::is_integral<typename std::remove_reference<T>::type>::value>::type* = nullptr>
+    String toHex(const T& value)
+    {
+        size_t size = sizeof(T) * 2;
+        String format = "%0" + String(size) + "X";
+        char hex[size + 1];
+        sprintf(hex, format.c_str(), value);
+        return String(hex);
+    }
+
+    bool empty() { return (asc_buffer.length() == 0); }
+
+#elif defined(__AVR__)
+
+    using StringType = String;
+
+    // works correctly only for integer
+    template <typename T>
     String toHex(const T& value)
     {
         size_t size = sizeof(T) * 2;

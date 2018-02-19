@@ -1,15 +1,17 @@
 #ifndef RECEIVER_H
 #define RECEIVER_H
 
-#if defined (TEENSYDUINO) || defined(__AVR__)
+#if defined (TEENSYDUINO)
+#include "Arduino.h"
+#include <cstdint>
+#include <algorithm>
+#elif defined(__AVR__)
 #include "Arduino.h"
 #elif defined OF_VERSION_MAJOR
 #include "ofMain.h"
 #else
 #error THIS PLATFORM IS NOT SUPPORTED
 #endif
-#include <cstdint>
-#include <algorithm>
 
 namespace IM920Ctrl {
 
