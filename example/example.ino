@@ -45,9 +45,13 @@ void setup()
 {
     Serial.begin(usb_baudrate);
 
-    // setup IM920
-    Serial2.begin(im920_baudrate);
-    im920.setup(Serial1);
+    // for Uno
+    Serial.begin(im920_baudrate);
+    im920.setup(Serial);
+
+    // for Mega, Teensy, and other arduino which have multiple serial
+    // Serial2.begin(im920_baudrate);
+    // im920.setup(Serial2);
 
     delay(2000);
 
