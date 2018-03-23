@@ -1,0 +1,20 @@
+{
+    "name": "IM920",
+    "keywords": "serial",
+    "description": "Interplan IM920 series wrapper for Arduino and openFrameworks",
+    "repository":
+    {
+        "type": "git",
+        "url": "https://github.com/hideakitai/IM920"
+    },
+    "authors":
+    {
+        "name": "Hideaki Tai",
+        "url": "https://github.com/hideakitai",
+        "maintainer": true
+    },
+    "version": "0.1.0",
+    "license": "MIT",
+    "frameworks": "arduino",
+    "platforms": "*"
+}
