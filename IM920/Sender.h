@@ -1,7 +1,7 @@
 #ifndef IM920_SENDER_H
 #define IM920_SENDER_H
 
-#if defined (TEENSYDUINO)
+#if defined (TEENSYDUINO) || defined (ESP_PLATFORM) || defined (ESP8266)
 #include "Arduino.h"
 #include <cstdint>
 #include <type_traits>
@@ -237,7 +237,7 @@ public:
 
 protected:
 
-#if defined (TEENSYDUINO)
+#if defined (TEENSYDUINO) || defined (ESP_PLATFORM) || defined (ESP8266)
 
     using StringType = String;
 
@@ -295,7 +295,7 @@ protected:
 
 };
 
-#if defined (TEENSYDUINO) || defined(__AVR__)
+#if defined (TEENSYDUINO) || defined(__AVR__) || defined (ESP_PLATFORM) || defined (ESP8266)
 
 template <>
 void Sender<Stream>::write()
