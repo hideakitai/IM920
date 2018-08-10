@@ -1,7 +1,7 @@
 #ifndef IM920_SENDER_H
 #define IM920_SENDER_H
 
-#if defined (TEENSYDUINO) || defined (ESP_PLATFORM) || defined (ESP8266)
+#if defined (TEENSYDUINO)
 #include "Arduino.h"
 #include <cstdint>
 #include <type_traits>
@@ -178,7 +178,7 @@ public:
     void rate(RF_RATE rate)
     {
         append(CMD::Cmd<CMD::TYPE::SETTING>::W_RF_RATE, 5);
-        append((uint8_t)rate);
+        append((uint8_t)rate, 10);
         write();
     }
 
@@ -237,7 +237,7 @@ public:
 
 protected:
 
-#if defined (TEENSYDUINO) || defined (ESP_PLATFORM) || defined (ESP8266)
+#if defined (TEENSYDUINO)
 
     using StringType = String;
 
@@ -295,7 +295,7 @@ protected:
 
 };
 
-#if defined (TEENSYDUINO) || defined(__AVR__) || defined (ESP_PLATFORM) || defined (ESP8266)
+#if defined (TEENSYDUINO) || defined(__AVR__)
 
 template <>
 void Sender<Stream>::write()

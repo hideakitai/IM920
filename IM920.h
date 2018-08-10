@@ -1,7 +1,7 @@
 #ifndef ARDUINO_IM920_H
 #define ARDUINO_IM920_H
 
-#if defined (TEENSYDUINO) || defined(__AVR__) || defined (ESP_PLATFORM) || defined (ESP8266)
+#if defined (TEENSYDUINO) || defined(__AVR__)
 #include "Arduino.h"
 using SerialStream = Stream;
 #elif defined OF_VERSION_MAJOR
