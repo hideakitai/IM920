@@ -1,7 +1,7 @@
 #ifndef RECEIVER_H
 #define RECEIVER_H
 
-#if defined (TEENSYDUINO)
+#if defined (TEENSYDUINO) || defined (ESP_PLATFORM) || defined (ESP8266)
 #include "Arduino.h"
 #include <cstdint>
 #include <algorithm>
@@ -175,7 +175,7 @@ protected:
 };
 
 
-#if defined (TEENSYDUINO) || defined(__AVR__)
+#if defined (TEENSYDUINO) || defined(__AVR__) || defined (ESP_PLATFORM) || defined (ESP8266)
 
     template <>
     void Receiver<Stream>::print()
